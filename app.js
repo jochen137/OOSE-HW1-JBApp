@@ -150,14 +150,26 @@ function render() {
     actions.className = "actions";
 
     const applyBtn = document.createElement("button");
-    applyBtn.textContent = currentUser ? "Apply" : "Sign in to apply";
+
     if (!currentUser) {
+      applyBtn.textContent = "Sign in to apply";
       applyBtn.classList.add("secondary");
-      applyBtn.addEventListener("click", () => alert("Please sign in (top right) to apply."));
-    } else {
       applyBtn.addEventListener("click", () =>
-        alert(`Applied to “${j.title}” at ${j.company} as ${currentUser}`)
+        alert("Please sign in (top right) to apply.")
       );
+    } else {
+      let applied = false;
+          applyBtn.textContent = "Apply";
+    
+      applyBtn.addEventListener("click", () => {
+        if (!applied) {
+          applied = true;
+          applyBtn.textContent = "Applied";
+          applyBtn.disabled = true;
+          applyBtn.classList.add("applied");
+          alert(`Applied to “${j.title}” at ${j.company} as ${currentUser}`);
+        }
+      });
     }
 
     const delBtn = document.createElement("button");

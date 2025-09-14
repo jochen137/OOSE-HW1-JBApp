@@ -116,6 +116,12 @@ button:active {
     transform: translateY(1px);
 }
 
+button.applied {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
 #jobList {
     display: grid;
     gap: 8px;
