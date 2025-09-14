@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JBApp — Simple Job Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>JBApp</h1>
+    <input id="username" placeholder="Username" />
+    <button id="btnSignIn">Sign in</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>Post a Job</h2>
+      <form id="jobForm">
+        <input id="title" placeholder="Job Title" required />
+        <input id="company" placeholder="Company" required />
+        <input id="location" placeholder="Location" />
+        <input id="pay" type="number" placeholder="Pay" />
+        <textarea id="desc" placeholder="Description"></textarea>
+        <button type="submit">Add Job</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Search Jobs</h2>
+      <input id="search" placeholder="Search by keyword" />
+    </section>
+
+    <section>
+      <h2>All Jobs</h2>
+      <div id="jobList"></div>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

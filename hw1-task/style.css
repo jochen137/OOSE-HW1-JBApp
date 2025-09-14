@@ -1,0 +1,157 @@
+:root {
+    --bg: #0f172a;
+    --panel: #111827;
+    --text: #e5e7eb;
+    --muted: #9aa4b2;
+    --line: #243049;
+    --brand: #38bdf8;
+    --danger: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: #0b1324;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+header input {
+    width: 160px;
+}
+
+main {
+    max-width: 880px;
+    margin: 18px auto;
+    padding: 0 16px;
+    display: grid;
+    gap: 16px;
+}
+
+section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+h2 {
+    margin: 4px 0 10px;
+    font-size: 16px;
+}
+
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 9px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: #0a1220;
+    color: var(--text);
+}
+
+#jobForm {
+    display: grid;
+    gap: 8px;
+}
+
+#jobForm .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+@media (max-width: 640px) {
+    #jobForm .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+button {
+    all: unset;
+    display: inline-block;
+    background: var(--brand);
+    color: #02131d;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button.secondary {
+    background: #0a1426;
+    color: var(--text);
+    border: 1px solid var(--line);
+}
+
+button.danger {
+    background: #2a0f14;
+    color: #ffdada;
+    border: 1px solid var(--danger);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#jobList {
+    display: grid;
+    gap: 8px;
+}
+
+.job {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+    background: #0b1324;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.job .title {
+    font-weight: 700;
+}
+
+.job .meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.job .desc {
+    margin: 8px 0 0;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 12px;
+}
